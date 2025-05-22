@@ -3,15 +3,16 @@
 @import "tailwindcss-primeui";
 
 @font-face {
-    font-family: Inconsolata;
-    src: url(./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
+    font-family: 'Inconsolata';
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
-body{
-    font-family: 'Incosolata' ;
+body {
+    font-family: 'Inconsolata', sans-serif;
 }
+
 
 @theme {
     --color-neutral-0: hsl(0, 0%, 100%);
