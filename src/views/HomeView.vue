@@ -3,6 +3,6 @@
 
 <template>
   <main>
-    s
+    <Button label="Submit" />
   </main>
 </template>
