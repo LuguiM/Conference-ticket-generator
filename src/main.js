@@ -9,6 +9,7 @@ const app = createApp(App)
 
 app.use(router)
 app.use(PrimeVue, {
+    unstyled: false,
     theme: {
         preset: Aura,
         options: {

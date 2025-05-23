@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 @import "tailwindcss-primeui";
 
@@ -11,8 +10,14 @@
 
 body {
     font-family: 'Inconsolata', sans-serif;
+    background-image: 
+    url('./assets/images/desktop-bg.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    /* width: 100vw; */
 }
-
 
 @theme {
     --color-neutral-0: hsl(0, 0%, 100%);
