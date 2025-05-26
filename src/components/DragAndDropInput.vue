@@ -2,7 +2,7 @@
     <div>
         <FileUpload :key="uploadKey" unstyled :multiple="props.multiple" accept="image/jpeg,image/png"
             :maxFileSize="5000000" @select="onSelectFile" :disabled="props.disabled" :pt="{
-                root: { class: validarInputFile ? 'file upload border-dashed border-2 rounded-[10px] bg-blue' : 'file-upload bg-white/10 border-dashed border-2 border-neutral-500 rounded-[10px]' },
+                root: { class: validarInputFile ? 'file-upload border-dashed border-2 rounded-[10px] bg-blue' : 'file-upload bg-white/10 border-dashed border-2 border-neutral-500 rounded-[10px]' },
                 buttonbar: { class: 'flex justify-center items-center' },
                 content: { class: 'px-5 pb-5 pt-4' }
             }">
@@ -22,7 +22,7 @@
                         class="flex flex-col items-center justify-center w-[25rem] gap-3">
                         <div>
                             <Image alt="Image" :src="file.objectURL" preview :pt="{
-                                root: { class: 'w-[8rem] h-24' },
+                                root: { class: 'w-[6rem] h-24' },
                                 image: { class: 'w-full h-24 object-cover rounded-2xl mx-auto' }
                             }" />
                         </div>
