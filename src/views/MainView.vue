@@ -7,7 +7,7 @@
     </div>
 
     <div class="flex flex-col gap-10 md:mx-20 mb-10">
-      <DragAndDropInput v-model="img" />
+      <DragAndDropInput v-model="img" label="Upload Avatar" />
       <TextInput label="Full name" name="name" />
       <TextInput label="Email Address" name="email" placeholder="example@email.com" />
       <TextInput label="GitHub Username" name="github" placeholder="@yourusername" />

@@ -11,9 +11,8 @@ import { defineProps } from 'vue';
 
 const props = defineProps({
     modelValue: {
-        type: [Array, null, String],
+        type: String,
         required: true,
-        default: () => []
     },
     label: {
         type: String,
@@ -44,4 +43,4 @@ const props = defineProps({
 
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

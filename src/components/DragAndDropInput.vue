@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p class="text-neutral-0 mb-3">{{ props.label }}</p>
         <FileUpload :key="uploadKey" unstyled :multiple="props.multiple" accept="image/jpeg,image/png"
             :maxFileSize="5000000" @select="onSelectFile" :disabled="props.disabled" :pt="{
                 root: { class: validarInputFile ? 'file-upload border-dashed border-2 rounded-[10px] bg-blue' : 'file-upload bg-white/10 border-dashed border-2 border-neutral-500 rounded-[10px]' },
@@ -86,6 +87,10 @@ const props = defineProps({
         type: Boolean,
         required: false,
         default: false
+    },
+    label: {
+        type: String,
+        required: false
     }
 });
 
