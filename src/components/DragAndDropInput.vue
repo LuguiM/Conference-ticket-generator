@@ -3,7 +3,7 @@
         <p class="text-neutral-0 mb-3">{{ props.label }}</p>
         <FileUpload :key="uploadKey" unstyled :multiple="props.multiple" accept="image/jpeg,image/png"
             :maxFileSize="5000000" @select="onSelectFile" :disabled="props.disabled" :pt="{
-                root: { class: validarInputFile ? 'file-upload border-dashed border-2 rounded-[10px] bg-blue' : 'file-upload bg-white/10 border-dashed border-2 border-neutral-500 rounded-[10px]' },
+                root: { class: validarInputFile ? 'file-upload bg-white/10 hover:bg-white/20 bg-white border-dashed border-2 border-neutral-500 rounded-[10px]' : 'file-upload bg-white/10 border-dashed border-2 border-neutral-500 rounded-[10px]' },
                 buttonbar: { class: 'flex justify-center items-center' },
                 content: { class: 'px-5 pb-5 pt-4' }
             }">
@@ -33,7 +33,8 @@
                         </div> -->
 
                         <div v-if="!props.disabled" class="flex flex-col md:flex-row gap-3">
-                            <Button @click="onRemoveFile(removeFileCallback, index)" outlined raised size="small" class="bg-neutral-400/10 text-white border-none">
+                            <Button @click="onRemoveFile(removeFileCallback, index)" outlined raised size="small"
+                                class="bg-neutral-400/10 text-white border-none">
                                 Remove image
                             </Button>
                         </div>
@@ -49,12 +50,15 @@
         </FileUpload>
 
 
-        <div v-if="!validarInputFile" class="flex gap-1 mt-4 text-xs">
-            <img src="../assets/images/icon-info.svg" alt="">
+        <div v-if="validarInputFile" class="flex gap-1 mt-4 text-xs">
+            <img src="../assets/images/icon-info.svg" alt="info">
+            <p v-if="validarInputFile" class="text-neutral-300 text-xs">Upload yout photo (JPG or PNG, max size 500KB).
+            </p>
 
-            <p v-if="!validarInputFile" class="text-neutral-300 text-xs">Upload yout photo (JPG or PNG, max size 500KB).</p>
-
-            <p v-else class="text-red-500">{{ messageErrorInputFile }}</p>
+        </div>
+        <div class="flex gap-1 mt-4 text-sm" v-else>
+            <img src="../assets/images/icon-info.svg" alt="info_error" class="fill-current text-red-500">
+            <p class="text-orange-700">{{ messageErrorInputFile }}</p>
         </div>
     </div>
 </template>

@@ -1,13 +1,18 @@
 <template>
     <div class="flex flex-col gap-2">
         <label :for="props.name" class="text-neutral-0"> {{ props.label }} </label>
-        <InputText :id="props.name" v-model="props.modelValue" :placeholder="props.placeholder"
+        <InputText :id="props.name" :modelValue="props.modelValue"
+            @update:modelValue="emit('update:modelValue', $event)" :placeholder="props.placeholder"
+            :invalid="!props.validarInput" :aria-invalid="!props.validarInput" :disabled="props.disabled"
             class="bg-neutral-500/10 focus:border-neutral-500 rounded-xl text-neutral-0 p-4 hover:bg-neutral-0/10" />
+        <div v-if="!props.validarInput" class="flex gap-1 mt-4 text-xs">
+            <p class="text-orange-500">{{ props.messageErrorInput }}</p>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
     modelValue: {
@@ -28,11 +33,12 @@ const props = defineProps({
     },
     validarInput: {
         type: Boolean,
-        required: true
+        required: false,
+        default: true
     },
     messageErrorInput: {
         type: String,
-        required: true
+        required: false
     },
     disabled: {
         type: Boolean,
@@ -40,6 +46,8 @@ const props = defineProps({
         default: false
     }
 });
+const emit = defineEmits(['update:modelValue']);
+
 
 </script>
 
