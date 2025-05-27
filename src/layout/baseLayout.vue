@@ -8,7 +8,7 @@ import { RouterView } from 'vue-router';
 
     </div>
     <main class="min-h-screen flex flex-col items-center justify-center my-10 px-5">
-        <img src="../assets/images/logo-full.svg" alt="logo-full" class="mx-auto my-auto">
+        <img src="../assets/images/logo-full.svg" alt="logo-full" class="mx-auto mt-10 mb-20">
         <div>
             <router-view />
         </div>
