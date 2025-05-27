@@ -11,7 +11,7 @@
             </p>
         </div>
 
-        <div class="relative w-[520px] h-[260px] rounded-2xl overflow-hidden text-white font-sans">
+        <div class="relative md:w-[520px] md:h-[260px] rounded-2xl overflow-hidden text-white font-sans">
             <!-- Fondo decorativo -->
             <img src="@/assets/images/pattern-ticket.svg" alt="ticket"
                 class="absolute inset-0 w-full h-full object-cover z-0" />
@@ -20,15 +20,15 @@
             <div class="relative z-10 flex flex-col justify-between h-full p-6">
                 <!-- Título del evento -->
                 <div>
-                    <img src="../assets/images/logo-full.svg" alt="logo">
-                    <p class="text-sm text-neutral-300 mt-1">Jan 31, 2025 / Austin, TX</p>
+                    <img src="../assets/images/logo-full.svg" alt="logo" class="w-32 md:w-50" />
+                    <p class="md:text-sm text-neutral-300 mt-1">Jan 31, 2025 / Austin, TX</p>
                 </div>
 
                 <!-- Info del usuario -->
                 <div class="flex items-center gap-4">
                     <div v-for="(file, index) in data.imagen" :key="file.name + file.size">
                         
-                        <img :src="file.objectURL" alt="Avatar" class="w-16 h-16 rounded-lg object-cover" />
+                        <img :src="file.objectURL" alt="Avatar" class="w-10 md:w-16 md:h-16 rounded-lg object-cover" />
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg leading-none">{{ data?.name }}</h3>
@@ -39,7 +39,7 @@
 
             <!-- Número de ticket girado -->
             <div
-                class="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-white/30 text-lg tracking-widest font-mono z-10">
+                class="absolute -right-5 md:right-4 top-1/2 -translate-y-1/2 rotate-90 text-white/30 text-lg tracking-widest font-mono z-10">
                 {{ ticketNumber }}
             </div>
         </div>

@@ -20,7 +20,7 @@
             <template #content="{ removeFileCallback }">
                 <div class="flex flex-wrap justify-center items-center p-0 gap-2">
                     <div v-for="(file, index) in images" :key="file.name + file.size"
-                        class="flex flex-col items-center justify-center w-[25rem] gap-3">
+                        class="flex flex-col items-center justify-center md:w-[25rem] gap-3">
                         <div>
                             <Image alt="Image" :src="file.objectURL" preview :pt="{
                                 root: { class: 'w-[6rem] h-24' },
