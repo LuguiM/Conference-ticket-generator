@@ -25,7 +25,9 @@
                             <Image alt="Image" :src="file.objectURL" preview :pt="{
                                 root: { class: 'w-[6rem] h-24' },
                                 image: { class: 'w-full h-24 object-cover rounded-2xl mx-auto' }
-                            }" />
+                            }" >
+                              <template #previewicon></template>
+                            </Image>
                         </div>
 
                         <!-- <div>
@@ -138,10 +140,6 @@ const onRemoveFile = (removeCallback, index) => {
 
 const truncarCadena = (cadena, maxLength = 15) => {
     return cadena.length > maxLength ? cadena.substring(0, maxLength) + '...' : cadena;
-};
-
-const getUrlImage = (image) => {
-    return `${import.meta.env.VITE_VUE_APP_API_URL}/storage/${image}`;
 };
 
 watchEffect(() => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div v-if="!ticket" class="flex flex-col gap-8">
     <div class="md:w-2xl text-center">
       <h1 class="text-white text-2xl md:text-5xl font-bold md:line-clamp-2">Your Journey yo Coding Conf 2025 Starts
         Here!</h1>
@@ -19,6 +19,9 @@
       </Button>
     </div>
   </div>
+
+  <TicketCreate :data="data" v-else />
+
 </template>
 
 <script setup>
@@ -26,6 +29,7 @@ import Button from 'primevue/button'
 import { ref } from 'vue';
 import DragAndDropInput from '@/components/DragAndDropInput.vue';
 import TextInput from '@/components/TextInput.vue';
+import TicketCreate from './TicketCreate.vue';
 
 const data = ref({
   imagen: null,
@@ -34,6 +38,7 @@ const data = ref({
   github: ''
 });
 
+const ticket = ref(false);
 const validarInputFile = ref(true);
 const messageErrorInputFile = ref('');
 const emailValid = ref(true);
@@ -87,7 +92,6 @@ const createTicket = () => {
     return;
   }
 
-  // Aquí puedes agregar la lógica para crear el ticket
-  console.log("Ticket creado con los siguientes datos:", data.value);
+  ticket.value = true;
 }
 </script>
