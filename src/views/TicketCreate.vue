@@ -12,19 +12,15 @@
         </div>
 
         <div class="relative md:w-[520px] md:h-[260px] rounded-2xl overflow-hidden text-white font-sans">
-            <!-- Fondo decorativo -->
             <img src="@/assets/images/pattern-ticket.svg" alt="ticket"
                 class="absolute inset-0 w-full h-full object-cover z-0" />
 
-            <!-- Contenido del ticket -->
             <div class="relative z-10 flex flex-col justify-between h-full p-6">
-                <!-- Título del evento -->
                 <div>
                     <img src="../assets/images/logo-full.svg" alt="logo" class="w-32 md:w-50" />
                     <p class="md:text-sm text-neutral-300 mt-1">Jan 31, 2025 / Austin, TX</p>
                 </div>
 
-                <!-- Info del usuario -->
                 <div class="flex items-center gap-4">
                     <div v-for="(file, index) in data.imagen" :key="file.name + file.size">
                         
@@ -37,7 +33,6 @@
                 </div>
             </div>
 
-            <!-- Número de ticket girado -->
             <div
                 class="absolute -right-5 md:right-4 top-1/2 -translate-y-1/2 rotate-90 text-white/30 text-lg tracking-widest font-mono z-10">
                 {{ ticketNumber }}
@@ -62,13 +57,6 @@ const generarTicketNumber = () => {
   const numero = Math.floor(1000 + Math.random() * 9000);
   return `#${numero}`;
 };
-
-const avatarUrl = computed(() => {
-  if (props.data.imagen && typeof props.data.imagen === 'object') {
-    return URL.createObjectURL(props.data.imagen);
-  }
-  return null;
-});
 
 onMounted(() => {
   ticketNumber.value = generarTicketNumber();
